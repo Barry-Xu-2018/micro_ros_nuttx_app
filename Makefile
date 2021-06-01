@@ -1,9 +1,10 @@
-include $(APPDIR)/Make.defs
--include $(SDKDIR)/Make.defs
+#include $(APPDIR)/Make.defs
+#-include $(SDKDIR)/Make.defs
+-include $(TOPDIR)/Make.defs
 
 MAINSRC = microros_main.c
 
-CFLAGS += ${shell $(INCDIR) "$(CC)" include}
+#CFLAGS += ${shell $(INCDIR) "$(CC)" include}
 
 PROGNAME = microros
 PRIORITY = SCHED_PRIORITY_DEFAULT
@@ -121,7 +122,8 @@ libmicroros.a: micro_ros_src/install
 	ar rc -s libmicroros.a *.obj; cp libmicroros.a ..; \
 	cd ..; rm -rf libmicroros; \
 	# cd ..; \
-	cp -R micro_ros_src/install/include include;
+	cp -R micro_ros_src/install/include include; \
+	cp -R micro_ros_src/install/include/* $(APPDIR)/include;
 
 
 include $(APPDIR)/Application.mk
