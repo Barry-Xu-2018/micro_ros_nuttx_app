@@ -1,0 +1,5 @@
+menu "MicroRos"
+source "/home/barry-xu/Work/Spresense_New/spresense/sdk/apps/microros/example_app/Kconfig"
+source "/home/barry-xu/Work/Spresense_New/spresense/sdk/apps/microros/micro_ros_lib/Kconfig"
+endmenu
+
